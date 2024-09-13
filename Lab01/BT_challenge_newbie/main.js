@@ -5,11 +5,53 @@ for (let i = 0; i <= 10; i++) {
 }
 
 // 2. Print the odd numbers less than 100
+console.log("2. Odd numbers less than 100: ");
+for (let i = 0; i < 100; i++) {
+    if (i % 2 != 0) console.log(i);
+}
+
 // 3. Print the multiplication table with 7
+console.log("3. Multiplication table with 7");
+for (let i = 1; i <= 10; i++) {
+    console.log(`7x ${i} = ${7 * i}`);
+}
+
 // 4. Print all the multiplication tables with numbers from 1 to 10
+console.log("4. All the multiplication tables with numbers from 1 to 10:");
+for (let i = 1; i <= 10; i++) {
+    let row = "";
+    for (let j = 1; j <= 10; j++) {
+        row += `${i} x ${j} = ${i * j}\t`;
+    }
+    console.log(row);
+}
+
 // 5. Calculate the sum of numbers from 1 to 10
+console.log("5. Calculate the sum of numbers from 1 to 10: ");
+let sum = 0;
+for (let i = 1; i <= 10; i++) {
+    sum += i;
+}
+console.log(`Sum of numbers from 1 to 10: ${sum}`);
+
 // 6. Calculate 10!
+console.log("6. Calculate 10!: ");
+let factorial = 1;
+for (let i = 1; i <= 10; i++) {
+    factorial *= i;
+}
+console.log(`t10! = ${factorial}`);
+
 // 7. Calculate the sum of even numbers greater than 10 and less than 30
+console.log("7. Sum of even numbers greater than 10 and less than 30: ");
+let total_eve = 0;
+for (let i = 12; i < 30; i++) {
+    if (i % 2 == 0) total_eve += i;
+}
+console.log(
+    `Sum of even numbers greater than 10 and less than 30: ${total_eve}`
+);
+
 // 8. Create a function that will convert from Celsius to Fahrenheit
 // 9. Create a function that will convert from Fahrenheit to Celsius
 // 10. Calculate the sum of numbers in an array of numbers
