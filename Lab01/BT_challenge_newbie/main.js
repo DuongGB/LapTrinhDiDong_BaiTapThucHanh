@@ -53,14 +53,79 @@ console.log(
 );
 
 // 8. Create a function that will convert from Celsius to Fahrenheit
+console.log(
+    "8. Create a function that will convert from Celsius to Fahrenheit"
+);
+function convert(c) {
+    let f = (c * 9) / 5 + 32;
+    console.log(`${c} oC = ${f} oF`);
+}
+convert(1);
+
 // 9. Create a function that will convert from Fahrenheit to Celsius
+console.log(
+    "9. Create a function that will convert from Fahrenheit to Celsius"
+);
+function convert_FC(f) {
+    let c = Math.round(((f - 32) * 5) / 9);
+    console.log(`${f} oF = ${c} oC`);
+}
+convert_FC(36);
+
 // 10. Calculate the sum of numbers in an array of numbers
+console.log("Calculate the sum of numbers in an array of numbers");
+let array1 = [2, -2, 5, 6, 9, 10, 8, 2];
+let sum_array = array1.reduce((sum, current) => sum + current, 0);
+console.log(`Sum of array: ${sum_array}`);
+
 // 11. Calculate the average of the numbers in an array of numbers
+console.log("11. Calculate the average of the numbers in an array of numbers");
+let average = sum_array / array1.length;
+console.log(`Average of array: ${average}`);
 
 // 12. Create a function that receives an array of numbers as argument and returns an array containing only the positive numbers
+console.log(
+    "12. Create a function that receives an array of numbers as argument and return an array containing only the positive numbers"
+);
+function positiveNumbers(numbers) {
+    return numbers.filter((number) => number > 0);
+}
+let array2 = [-10, 4, 5, 32, 5, -4, 6];
+console.log(positiveNumbers(array2));
+
 // 13. Find the maximum number in an array of numbers
+console.log("13. Find the maximum number in an array of numbers");
+let array3 = [5, 3, 2, 52, 1];
+let maxArr = Math.max(...array3);
+console.log(`Max array: ${maxArr}`);
+
 // 14. Print the first 10 Fibonacci numbers without recursion
+console.log("14. Print the first 10 Fibonacci numbers without recursion");
+function printFib(n) {
+    let a = 0,
+        b = 1;
+    let fib = [];
+    for (let i = 0; i < n; i++) {
+        fib.push(a);
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+    console.log(fib.join());
+}
+printFib(10);
+
 // 15. Create a function that will find the nth Fibonacci number using recursion
+console.log(
+    "Create a function that will find the nth Fibonacci number using recursion"
+);
+function fib(n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+let nthFib = fib(10);
+console.log(`10th Fibonacci number: ${nthFib}`);
+
 // 16. Create a function that will return a Boolean specifying if a number is prime
 // 17. Calculate the sum of digits of a positive integer number
 // 18. Print the first 100 prime numbers
