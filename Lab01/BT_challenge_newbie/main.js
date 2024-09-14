@@ -127,12 +127,115 @@ let nthFib = fib(10);
 console.log(`10th Fibonacci number: ${nthFib}`);
 
 // 16. Create a function that will return a Boolean specifying if a number is prime
+console.log(
+    "16. Create a function that will return a Boolean specifying if a number is prime: "
+);
+function isPrime(n) {
+    if (n < 2) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+console.log(`Is 3 prime number: ${isPrime(7)}`);
+
 // 17. Calculate the sum of digits of a positive integer number
+console.log("17. Calculate the sum of a positive integer number");
+function sumDigits(n) {
+    let sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n = Math.floor(n / 10);
+    }
+    return sum;
+}
+
 // 18. Print the first 100 prime numbers
+console.log("Print the first 100 prime numbers");
+let count = 0;
+let i = 2;
+while (count < 100) {
+    if (isPrime(i)) {
+        console.log(i);
+        count++;
+    }
+    i++;
+}
+
 // 19. Create a function that will return in an array the first “p” prime numbers greater than “n” 20. Rotate an array to the left 1 position
+console.log(
+    "19. Create a function that will return in an array the first p prime numbers greater than n: "
+);
+function getPrimeNumbers(p, n) {
+    let primeNumbers = [];
+    let i = n + 1;
+    while (primeNumbers.length < p) {
+        if (isPrime(i)) {
+            primeNumbers.push(i);
+        }
+        i++;
+    }
+    return primeNumbers;
+}
+console.log(getPrimeNumbers(1, 10));
+
 // 21. Rotate an array to the right 1 position
+console.log("21. Rotate an array to the right 1 position");
+let array4 = [1, 2, 3, 4, 5];
+let lastElement = array4.pop();
+array4.unshift(lastElement);
+console.log(array4);
+
 // 22. Reverse an array
+console.log("22 Reverse an array");
+let array5 = [1, 2, 3, 4, 5];
+let reverseArr = array5.reverse();
+console.log(reverseArr);
+
 // 23. Reverse a string
+console.log("23. Reverse a string");
+let string = "Hello Duong NE";
+let reverseString = string.split("").reverse().join("");
+console.log(reverseString);
+
 // 24. Create a function that will merge two arrays and return the result as a new array
+console.log(
+    "24. Create a function that will merge two arrays of numbers as agruments and return an array composed of all the numbers that are either in the first array or second array but not in both:"
+);
+function mergeArrays(array1, array2) {
+    return array1.concat(array2);
+}
+let array6 = [1, 2, 3];
+let array7 = [4, 5, 6];
+console.log(mergeArrays(array6, array7));
+
 // 25. Create a function that will receive two arrays of numbers as arguments and return an array composed of all the numbers that are either in the first array or second array but not in both
+console.log(
+    "25. Create a function that will receive two arrays of numbers as arguments and return an array composed of all the numbers that are either in the first array or second array but not in both"
+);
+function getUniqueNumbers(array1, array2) {
+    let uniqueNumbers = [];
+    array1.forEach((number) => {
+        if (!array2.includes(number)) uniqueNumbers.push(number);
+    });
+    array2.forEach((number) => {
+        if (!array1.includes(number)) {
+            uniqueNumbers.push(number);
+        }
+    });
+    return uniqueNumbers;
+}
+let array8 = [1, 2, 3, 4, 5];
+let array9 = [3, 4, 5, 6, 7];
+console.log(getUniqueNumbers(array8, array9));
+
 // 26. Create a function that will receive two arrays and will return an array with elements that are in the first array but not in the second
+console.log(
+    "26. Create a function that will receive two arrays and will return an array an array with elements that are in the first array but not in the second"
+);
+function getElementsInFirst(array1, array2) {
+    return array1.filter((number) => !array2.includes(number));
+}
+console.log(getElementsInFirst(array8, array9));
