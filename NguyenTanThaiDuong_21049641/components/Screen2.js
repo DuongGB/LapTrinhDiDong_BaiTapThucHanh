@@ -19,7 +19,7 @@ const Screen2 = ({ navigation }) => {
 
     useEffect(() => {
         if (status === "idle") {
-            dispatch(fetchBikes()); // Đổi từ fetchProducts sang fetchBikes
+            dispatch(fetchBikes());
         }
     }, [status, dispatch]);
 
@@ -34,7 +34,7 @@ const Screen2 = ({ navigation }) => {
             {status === "failed" && <Text>Error: {error}</Text>}
             <FlatList
                 data={products}
-                keyExtractor={(item) => item.id.toString()} // Đảm bảo `id` là chuỗi
+                keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <TouchableOpacity
                         onPress={() => handleProductClick(item.id)}
@@ -44,7 +44,7 @@ const Screen2 = ({ navigation }) => {
                             source={{ uri: item.img }}
                             style={styles.image}
                         />
-                        <Text style={styles.name}>{item.title}</Text>
+                        <Text style={styles.name}>{item.name}</Text>
                         <Text style={styles.price}>${item.price}</Text>
                     </TouchableOpacity>
                 )}
