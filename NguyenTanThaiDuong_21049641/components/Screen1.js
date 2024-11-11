@@ -7,8 +7,9 @@ import {
     TouchableOpacity,
     ScrollView,
 } from "react-native";
+import Screen3 from "./Screen3";
 
-export default function Screen1({ navigation }) {
+export default function Screen01({ navigation }) {
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -19,7 +20,7 @@ export default function Screen1({ navigation }) {
                 <View style={styles.imageContainer}>
                     <Image
                         source={{
-                            uri: "https://ibb.co/VBDZYLK",
+                            uri: "https://i.ibb.co/Cwc2nXb/bione-removebg-preview-2.png",
                         }}
                         style={styles.image}
                         resizeMode="contain"
@@ -32,7 +33,12 @@ export default function Screen1({ navigation }) {
                 >
                     <Text style={styles.buttonText}>Get Started</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonADD}>
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate("Screen3");
+                    }}
+                    style={styles.buttonADD}
+                >
                     <Text style={styles.buttonText}>ADD</Text>
                 </TouchableOpacity>
             </View>
