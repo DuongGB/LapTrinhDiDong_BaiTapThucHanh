@@ -8,7 +8,7 @@ import {
     ScrollView,
 } from "react-native";
 
-export default function Screen01({ navigation }) {
+export default function Screen1({ navigation }) {
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -19,7 +19,7 @@ export default function Screen01({ navigation }) {
                 <View style={styles.imageContainer}>
                     <Image
                         source={{
-                            uri: "https://ibb.co/f4tgwrQ",
+                            uri: "https://ibb.co/VBDZYLK",
                         }}
                         style={styles.image}
                         resizeMode="contain"
